@@ -1,6 +1,16 @@
 const express = require('express');
+const cors = require('cors');
+const routeLogin = require('./routes/login-route');
+
 const app = express();
 const port = 4000;
+
+
+app.use(cors());
+app.use(express.json());
+
+app.use("/api/loginInfo", routeLogin);
+
 app.use((req, res, next) => {
     console.log(`${req.method} request for ${req.url}`);
     next();
@@ -14,17 +24,6 @@ app.use((err, req, res, next) => {
 app.get('/error', (req, res) => {
     throw new Error('Test Error');
 });
-
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-
-
-app.get('/api', (req, res) => {
-    res.send('Welcome to the API!');
-});
-
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
