@@ -6,16 +6,21 @@
 In the project directory, you can run:
 
 ## `1. MySQL 설치 및 실행`
+```
+$ brew install mysql
+$ mysql -u root -p
+```
 
-#### `$ brew install mysql`
-#### `$ mysql -u root -p`
 
 
 ## `2. project 내부 설치 사항`
-#### `$ npm install mysql`
-#### `$ npm install express`
-#### `$ npm install cors`
-#### `$ npm install dotenv`
+```
+$ npm install mysql
+$ npm install express
+$ npm install cors
+$ npm install dotenv
+```
+
 
 ## `3. node 시작`
 #### `$ node index.js` or  `$ npm run start`
